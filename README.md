@@ -88,6 +88,14 @@ MainTab:Button({
         loadstring(game:HttpGet("https://pastefy.app/4Sa0uIve/raw"))();
     end
 })
+
+MainTab:Button({
+    Title = "Sforza Hub🔧",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/pdyfSjzK"))();
+    end
+})
   
 MainTab:Button({
     Title = "Nova Era Hub💎",
@@ -250,6 +258,14 @@ MainTab:Button({
 })
 
 MainTab:Button({
+    Title = "Bola Chiclete⚽️",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastefy.app/ZMHWh8kW/raw"))();
+    end
+})
+
+MainTab:Button({
     Title = "Lag Switch👣",
     Locked = false,
     Callback = function()
@@ -314,7 +330,7 @@ MainTab:Button({
 })
 
 MainTab:Button({
-    Title = "Bola Chiclete ⚽️",
+    Title = "Henrique Drible⚡",
     Locked = false,
     Callback = function()
         loadstring(game:HttpGet("https://pastebin.com/raw/wJKBdV8A"))();
@@ -642,7 +658,7 @@ ConfigTab:Slider({
     },
     Callback = function(value)
         local char = game.Players.LocalPlayer.Character
-        local hum = char and char:FindFirstObject("Humanoid")
+        local hum = char and char:FindFirstChild("Humanoid")
         if hum then 
             hum.WalkSpeed = value 
         end
@@ -659,7 +675,7 @@ ConfigTab:Slider({
     },
     Callback = function(value)
         local char = game.Players.LocalPlayer.Character
-        local hum = char and char:FindFirstObject("Humanoid")
+        local hum = char and char:FindFirstChild("Humanoid")
         if hum then 
             hum.JumpPower = value 
         end
