@@ -74,6 +74,14 @@ MainTab:Button({
 })
 
 MainTab:Button({
+    Title = "Otimização Linha Transparente 🔗",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/RbC506TY"))();
+    end
+})
+
+MainTab:Button({
     Title = "Fire Hub🔥",
     Locked = false,
     Callback = function()
