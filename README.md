@@ -82,6 +82,22 @@ MainTab:Button({
 })
 
 MainTab:Button({
+    Title = "Oliver Atravessador 🗡",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Script-de-atravessar-56285"))()
+    end
+})
+
+MainTab:Button({
+    Title = "Atravessar 👻",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/f6qejm5p/raw"))()
+    end
+})
+
+MainTab:Button({
     Title = "Esticar Tela 🖥",
     Locked = false,
     Callback = function()
