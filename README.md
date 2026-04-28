@@ -64,12 +64,107 @@ local MainTab = MainWindow:Tab({
 })
 
 -- ================= BOTÕES PRINCIPAIS =================
+MainTab:Button({
+    Title = "Mega Otimização Brookhaven 🏠",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/GzrqQWkx"))();
+    end
+})
+
+MainTab:Button({
+    Title = "Lukinhas Hub 💙",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/dhxQnF4b"))();
+    end
+})
+
+MainTab:Button({
+    Title = "Toni Kroos 🍀",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/bCL22UZw"))();
+    end
+})
+
+MainTab:Button({
+    Title = "X10 Premium Hub 💎",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/MW2Zyv6z"))();
+    end
+})
 
 MainTab:Button({
     Title = "Atravessar V12🟣",
     Locked = false,
     Callback = function()
         loadstring(game:HttpGet("https://pastebin.com/raw/GZn1L0PM"))();
+    end
+})
+
+MainTab:Button({
+    Title = "Lc Pjl Anti Pulo 🚫",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/MCTcaHZq"))();
+    end
+})
+
+MainTab:Button({
+    Title = "Theus Reach V2 🦿",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/pm4pyxm4"))();
+    end
+})
+
+MainTab:Button({
+    Title = "Atravessar Fantasma Do Theus 👻",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/LVeEhZZn"))();
+    end
+})
+
+MainTab:Button({
+    Title = "Zyck ☠️",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/WYeG9ypc"))();
+    end
+})
+
+MainTab:Button({
+    Title = "Abençoado 777 👼",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/admpietrovinicius-debug/Aben-oado-777/refs/heads/main/Aben%C3%A7oado777.lua"))();
+    end
+})
+
+MainTab:Button({
+    Title = "Script Da Leandrinha⚽️ (? KKKKKKKK)",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/q5CxCNyi"))();
+    end
+})
+
+MainTab:Button({
+    Title = "Soccer Dribble Hub ⚡️",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/gwZKjbVM"))();
+    end
+})
+
+MainTab:Button({
+    Title = "Puyol V3 ⚡️",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/bMLRRKwG"))();
     end
 })
 
