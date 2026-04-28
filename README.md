@@ -1,9 +1,9 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
 local MainWindow = WindUI:CreateWindow({
-    Title = "Legendary Hub",
+    Title = "Lendário Hub",
     Icon = "biohazard",
-    Author = "Por Math",
+    Author = "Por Math e Brito Totosos",
     Folder = "LH",
     Size = UDim2.fromOffset(580, 460),
     MinSize = Vector2.new(560, 350),
@@ -24,11 +24,11 @@ local MainWindow = WindUI:CreateWindow({
     },
     KeySystem = { 
         Enabled = true,
-        Key = { "LEG" },
+        Key = { "BritoLindoMathTotoso" },
         Note = "Compre a key no nosso server do discord!",
         Thumbnail = {
             Image = "rbxassetid://88082041597741",
-            Title = "Legendary Hub",
+            Title = "Lendário Hub",
         },
         URL = "https://discord.gg/WUBZn2EPCK",
         SaveKey = false,
@@ -43,7 +43,7 @@ MainWindow:Tag({
 })
 
 MainWindow:EditOpenButton({
-    Title = "Legendary Hub",
+    Title = "Abrir Lendário Hub",
     Icon = "biohazard",
     CornerRadius = UDim.new(0,8),
     StrokeThickness = 3,
