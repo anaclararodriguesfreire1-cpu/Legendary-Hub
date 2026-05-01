@@ -81,6 +81,14 @@ MainTab:Button({
 })
 
 MainTab:Button({
+    Title = "Pirulito Hub 🍭",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/A0xCHTGM"))();
+    end
+})
+
+MainTab:Button({
     Title = "Toni Kroos 🍀",
     Locked = false,
     Callback = function()
@@ -145,7 +153,7 @@ MainTab:Button({
 })
 
 MainTab:Button({
-    Title = "Script Da Leandrinha⚽️ (? KKKKKKKK)",
+    Title = "Hub Da Leandrinha⚽️ (? KKKKKKKK)",
     Locked = false,
     Callback = function()
         loadstring(game:HttpGet("https://pastebin.com/raw/q5CxCNyi"))();
