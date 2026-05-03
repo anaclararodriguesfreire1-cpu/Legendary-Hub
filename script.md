@@ -73,6 +73,14 @@ MainTab:Button({
 })
 
 MainTab:Button({
+    Title = "Caga Na Roupa Hub 💩",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastefy.app/eKFExNPG/raw"))();
+    end
+})
+
+MainTab:Button({
     Title = "Anti Pulo Foldenxz 🚫",
     Locked = false,
     Callback = function()
