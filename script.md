@@ -73,6 +73,22 @@ MainTab:Button({
 })
 
 MainTab:Button({
+    Title = "Anti Pulo Foldenxz 🚫",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/d2T3QxGt"))();
+    end
+})
+
+MainTab:Button({
+    Title = "Six Hub 6️⃣",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/MDhqkib4"))();
+    end
+})
+
+MainTab:Button({
     Title = "Anti Pulo Elias 🚫",
     Locked = false,
     Callback = function()
