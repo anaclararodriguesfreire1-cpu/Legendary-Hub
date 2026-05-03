@@ -73,6 +73,14 @@ MainTab:Button({
 })
 
 MainTab:Button({
+    Title = "Anti Pulo Elias 🚫",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/mgzrnsbr"))();
+    end
+})
+
+MainTab:Button({
     Title = "Lukinhas Hub 💙",
     Locked = false,
     Callback = function()
