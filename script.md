@@ -81,6 +81,14 @@ MainTab:Button({
 })
 
 MainTab:Button({
+    Title = "Brazilian Panel V2 🇧🇷",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/geau1Zy7"))();
+    end
+})
+
+MainTab:Button({
     Title = "Anti Pulo Foldenxz 🚫",
     Locked = false,
     Callback = function()
