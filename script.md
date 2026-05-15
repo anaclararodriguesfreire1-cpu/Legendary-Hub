@@ -73,6 +73,14 @@ MainTab:Button({
 })
 
 MainTab:Button({
+    Title = "PJ Atravessa 🧧",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://pastefy.app/CrhmqFtx/raw"))();
+    end
+})
+
+MainTab:Button({
     Title = "Caga Na Roupa Hub 💩",
     Locked = false,
     Callback = function()
@@ -857,4 +865,4 @@ ConfigTab:Button({
     end
 })
 
-print("✅ Legendary Hub (Versão Completa) carregado!")
+print("✅ Lendário Hub carregado!")
