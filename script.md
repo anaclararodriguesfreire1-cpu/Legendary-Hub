@@ -24,7 +24,7 @@ local MainWindow = WindUI:CreateWindow({
     },
     KeySystem = { 
         Enabled = true,
-        Key = { "BritoLindoMathTotoso" },
+        Key = { "BM" },
         Note = "Compre a key no nosso server do discord!",
         Thumbnail = {
             Image = "rbxassetid://88082041597741",
@@ -420,7 +420,7 @@ MainTab:Button({
     Title = "Water Hub🌊",
     Locked = false,
     Callback = function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/Cn805svp"))();
+        loadstring(game:HttpGet("https://pastefy.app/iQzbaBGE/raw"))()
     end
 })
 
@@ -865,4 +865,4 @@ ConfigTab:Button({
     end
 })
 
-print("✅ Lendário Hub carregado!")
+print("✅ Legendary Hub (Versão Completa) carregado!")
