@@ -1,5 +1,18 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
+-- Criar tema Legendary
+WindUI:AddTheme({
+    Name = "Legendary",
+    
+    Accent = Color3.fromRGB(0, 188, 212), -- Ciano um pouco escuro (#00BCD4)
+    Background = Color3.fromRGB(0, 0, 0), -- Preto absoluto
+    Outline = Color3.fromRGB(0, 188, 212), -- Ciano escuro
+    Text = Color3.fromRGB(255, 255, 255), -- Branco
+    Placeholder = Color3.fromRGB(0, 188, 212), -- Ciano escuro
+    Button = Color3.fromRGB(0, 188, 212), -- Ciano escuro
+    Icon = Color3.fromRGB(0, 188, 212), -- Ciano escuro
+})
+
 local MainWindow = WindUI:CreateWindow({
     Title = "Lendário Hub",
     Icon = "biohazard",
@@ -9,7 +22,7 @@ local MainWindow = WindUI:CreateWindow({
     MinSize = Vector2.new(560, 350),
     MaxSize = Vector2.new(850, 560),
     Transparent = false,
-    Theme = "Dark",
+    Theme = "Legendary", -- Tema aplicado aqui
     Resizable = true,
     SideBarWidth = 200,
     BackgroundImageTransparency = 0.42,
@@ -38,7 +51,7 @@ local MainWindow = WindUI:CreateWindow({
 MainWindow:Tag({
     Title = "V1",
     Icon = "",
-    Color = Color3.fromHex("#FFFF00"),
+    Color = Color3.fromRGB(0, 188, 212), -- Ciano escuro
     Radius = 13,
 })
 
@@ -48,8 +61,8 @@ MainWindow:EditOpenButton({
     CornerRadius = UDim.new(0,8),
     StrokeThickness = 3,
     Color = ColorSequence.new(
-        Color3.fromHex("#03ffea"), 
-        Color3.fromHex("#009c8f")
+        Color3.fromRGB(0, 188, 212), -- Ciano escuro
+        Color3.fromRGB(0, 150, 170) -- Ciano mais escuro para gradiente
     ),
     OnlyMobile = false,
     Enabled = true,
@@ -177,14 +190,6 @@ MainTab:Button({
 })
 
 MainTab:Button({
-    Title = "Atravessar Fantasma Do Theus 👻",
-    Locked = false,
-    Callback = function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/LVeEhZZn"))();
-    end
-})
-
-MainTab:Button({
     Title = "Zyck ☠️",
     Locked = false,
     Callback = function()
@@ -245,14 +250,6 @@ MainTab:Button({
     Locked = false,
     Callback = function()
         loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Script-de-atravessar-56285"))()
-    end
-})
-
-MainTab:Button({
-    Title = "Atravessar 👻",
-    Locked = false,
-    Callback = function()
-        loadstring(game:HttpGet("https://pastebin.com/f6qejm5p/raw"))()
     end
 })
 
@@ -513,14 +510,6 @@ MainTab:Button({
 })
 
 MainTab:Button({
-    Title = "Atravessar Tudo👻",
-    Locked = false,
-    Callback = function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/uZ6bvTtF"))();
-    end
-})
-
-MainTab:Button({
     Title = "Script do Kay V2🔥",
     Locked = false,
     Callback = function()
@@ -660,7 +649,7 @@ MainTab:Button({
     Title = "Theus Hub🍎",
     Locked = false,
     Callback = function()
-        loadstring(game:HttpGet("https://pastefy.app/bib1MRS8/raw"))();
+        loadstring(game:HttpGet("https://pastefy.app/bib1MRS8/raw "))();
     end
 })
 
