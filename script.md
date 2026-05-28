@@ -1,17 +1,10 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
--- Criar tema Legendary
-WindUI:AddTheme({
-    Name = "Legendary",
-    
-    Accent = Color3.fromRGB(0, 188, 212), -- Ciano um pouco escuro (#00BCD4)
-    Background = Color3.fromRGB(0, 0, 0), -- Preto absoluto
-    Outline = Color3.fromRGB(0, 188, 212), -- Ciano escuro
-    Text = Color3.fromRGB(255, 255, 255), -- Branco
-    Placeholder = Color3.fromRGB(0, 188, 212), -- Ciano escuro
-    Button = Color3.fromRGB(0, 188, 212), -- Ciano escuro
-    Icon = Color3.fromRGB(0, 188, 212), -- Ciano escuro
-})
+-- Ciano escuro personalizado
+local CianoEscuro = Color3.fromRGB(0, 188, 212)
+local CianoMaisEscuro = Color3.fromRGB(0, 150, 170)
+local Preto = Color3.fromRGB(0, 0, 0)
+local Branco = Color3.fromRGB(255, 255, 255)
 
 local MainWindow = WindUI:CreateWindow({
     Title = "Lendário Hub",
@@ -22,7 +15,15 @@ local MainWindow = WindUI:CreateWindow({
     MinSize = Vector2.new(560, 350),
     MaxSize = Vector2.new(850, 560),
     Transparent = false,
-    Theme = "Legendary", -- Tema aplicado aqui
+    Theme = {
+        Background = Preto,
+        Accent = CianoEscuro,
+        Outline = CianoEscuro,
+        Text = Branco,
+        Placeholder = CianoEscuro,
+        Button = CianoEscuro,
+        Icon = CianoEscuro,
+    },
     Resizable = true,
     SideBarWidth = 200,
     BackgroundImageTransparency = 0.42,
@@ -51,7 +52,7 @@ local MainWindow = WindUI:CreateWindow({
 MainWindow:Tag({
     Title = "V1",
     Icon = "",
-    Color = Color3.fromRGB(0, 188, 212), -- Ciano escuro
+    Color = CianoEscuro,
     Radius = 13,
 })
 
@@ -60,10 +61,7 @@ MainWindow:EditOpenButton({
     Icon = "biohazard",
     CornerRadius = UDim.new(0,8),
     StrokeThickness = 3,
-    Color = ColorSequence.new(
-        Color3.fromRGB(0, 188, 212), -- Ciano escuro
-        Color3.fromRGB(0, 150, 170) -- Ciano mais escuro para gradiente
-    ),
+    Color = ColorSequence.new(CianoEscuro, CianoMaisEscuro),
     OnlyMobile = false,
     Enabled = true,
     Draggable = true,
