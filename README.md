@@ -1108,6 +1108,17 @@ SATab:Button({
     end
 })
 
+-- NOVO BOTÃO CROSSHAIR
+SATab:Button({
+    Title = "Crosshair 🎯",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Custom-Crosshair-Gui-237611"))()
+        end)
+    end
+})
+
 -- ================= TAB CONFIGURAÇÕES =================
 local ConfigTab = MainWindow:Tab({
     Title = "Configurações",
