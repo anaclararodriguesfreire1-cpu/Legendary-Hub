@@ -129,7 +129,7 @@ MainTab:Button({
 -- =====================================================
 MainTab:Section({
     Title = "Atravessar",
-    Icon = "walk",
+    Icon = "person-walking",
 })
 
 MainTab:Button({
@@ -333,7 +333,7 @@ MainTab:Button({
 -- =====================================================
 MainTab:Section({
     Title = "Bola",
-    Icon = "soccer-ball",
+    Icon = "circle",
 })
 
 MainTab:Button({
@@ -392,17 +392,6 @@ MainTab:Button({
 MainTab:Section({
     Title = "Hubs e Painéis",
     Icon = "box",
-})
-
-MainTab:Button({
-    Title = "Limpar Tela 💻",
-    Desc = "Esse script so funciona com scripts do Star Hub.",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastefy.app/FwY4L6qM/raw"))()
-        end)
-    end
 })
 
 MainTab:Button({
@@ -757,6 +746,106 @@ MainTab:Button({
     end
 })
 
+MainTab:Button({
+    Title = "Hub Da Leandrinha⚽️ (? KKKKKKKK)",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/q5CxCNyi"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Caga Na Roupa Hub 💩",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/eKFExNPG/raw"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Script Da Debinha🥀",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/9k4tL5Q7/raw"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Hotdog V4 🌭",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/GzxmSIIn/raw"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Tubaina Hub 🥶",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/xLM92mP5/raw"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Brookhaven Painel V2🏠",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/m70Y67h9"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Papai Cris Menu❤️",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/jI58Il0a/raw"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Hunk Hub🫂",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/ZGDUJNWr/raw"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Legendary Defender ⚔️",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/s91y0AFs"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "X Hub ❌️",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/yXuzlTpQ/raw"))()
+        end)
+    end
+})
+
 -- =====================================================
 -- SEÇÃO 7: OTIMIZAÇÕES E UTILIDADES
 -- =====================================================
@@ -854,62 +943,23 @@ MainTab:Section({
 })
 
 MainTab:Button({
+    Title = "Limpar Tela 💻",
+    Desc = "Esse script so funciona com scripts do Star Hub.",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/FwY4L6qM/raw"))()
+        end)
+    end
+})
+
+MainTab:Button({
     Title = "Teste De Campo 🏑",
     Locked = false,
     Desc = "Isso é um teste! Use por sua responsabilidade.",
     Callback = function()
         pcall(function()
             loadstring(game:HttpGet("https://pastefy.app/dNWJ5ot7/raw"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Hub Da Leandrinha⚽️ (? KKKKKKKK)",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/q5CxCNyi"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Caga Na Roupa Hub 💩",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastefy.app/eKFExNPG/raw"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Script Da Debinha🥀",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastefy.app/9k4tL5Q7/raw"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Hotdog V4 🌭",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastefy.app/GzxmSIIn/raw"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Tubaina Hub 🥶",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastefy.app/xLM92mP5/raw"))()
         end)
     end
 })
@@ -1035,16 +1085,6 @@ MainTab:Button({
 })
 
 MainTab:Button({
-    Title = "Brookhaven Painel V2🏠",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/m70Y67h9"))()
-        end)
-    end
-})
-
-MainTab:Button({
     Title = "Jvz Bug🥷",
     Locked = false,
     Callback = function()
@@ -1100,46 +1140,6 @@ MainTab:Button({
     Callback = function()
         pcall(function()
             loadstring(game:HttpGet("https://pastefy.app/bWS31I8q/raw"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Papai Cris Menu❤️",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastefy.app/jI58Il0a/raw"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Hunk Hub🫂",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastefy.app/ZGDUJNWr/raw"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Legendary Defender ⚔️",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/s91y0AFs"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "X Hub ❌️",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastefy.app/yXuzlTpQ/raw"))()
         end)
     end
 })
