@@ -129,7 +129,7 @@ MainTab:Button({
 -- =====================================================
 MainTab:Section({
     Title = "Atravessar",
-    Icon = "walk",
+    IcoStar"footprints",
 })
 
 MainTab:Button({
