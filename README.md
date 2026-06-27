@@ -129,7 +129,7 @@ MainTab:Button({
 -- =====================================================
 MainTab:Section({
     Title = "Atravessar",
-    IcoStar"footprints",
+    Icon = "footprints",
 })
 
 MainTab:Button({
@@ -967,7 +967,7 @@ MainTab:Button({
 })
 
 -- =====================================================
--- SEÇÃO 7: OTIMIZAÇÕES E UTILIDADES (ÍCONE CORRIGIDO)
+-- SEÇÃO 7: OTIMIZAÇÕES E UTILIDADES
 -- =====================================================
 MainTab:Section({
     Title = "Otimizações e Utilidades",
