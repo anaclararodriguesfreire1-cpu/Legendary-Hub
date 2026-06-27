@@ -125,7 +125,7 @@ MainTab:Button({
 })
 
 -- =====================================================
--- SEÇÃO 2: ATRAVESSAR (ÍCONE CORRIGIDO)
+-- SEÇÃO 2: ATRAVESSAR
 -- =====================================================
 MainTab:Section({
     Title = "Atravessar",
