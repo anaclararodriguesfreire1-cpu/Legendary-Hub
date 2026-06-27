@@ -125,11 +125,11 @@ MainTab:Button({
 })
 
 -- =====================================================
--- SEÇÃO 2: ATRAVESSAR
+-- SEÇÃO 2: ATRAVESSAR (ÍCONE CORRIGIDO)
 -- =====================================================
 MainTab:Section({
     Title = "Atravessar",
-    Icon = "person-walking",
+    Icon = "walk",
 })
 
 MainTab:Button({
@@ -256,6 +256,16 @@ MainTab:Button({
     Callback = function()
         pcall(function()
             loadstring(game:HttpGet("https://pastebin.com/raw/MCTcaHZq"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Anti Pulo Luke Jr 🔆",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/d0yvvV78/raw"))()
         end)
     end
 })
@@ -846,12 +856,122 @@ MainTab:Button({
     end
 })
 
+MainTab:Button({
+    Title = "K4y The Promission☠️",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/UtzKwcGt/raw"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "LP Scripts✔️",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://gist.githubusercontent.com/yesn20456-crypto/af368f3184c1d34a8f4a9e33d4325d0d/raw/60e8309b99f9e002a55005b2d7905a82b90b70f1/gistfile1.txt"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Pedrizz Bug⚡️",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/28LDYic2"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Glitch Infinity♾️",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/FpPh3UhN"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Script do Kay V2🔥",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/eXGuwWWE"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Mtzin Pro Max ⚡️",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/kCKEhh99"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Painel do Kayne🔥",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/Frxjj6my"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Kayne Supremo🔥",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/xyS7KQdY"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Football Master V7⚽",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/I9nocuO2/raw"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Football Master V5 Pro⚽",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/77ScQkbz/raw"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Script do Freezer🧊",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/bWS31I8q/raw"))()
+        end)
+    end
+})
+
 -- =====================================================
--- SEÇÃO 7: OTIMIZAÇÕES E UTILIDADES
+-- SEÇÃO 7: OTIMIZAÇÕES E UTILIDADES (ÍCONE CORRIGIDO)
 -- =====================================================
 MainTab:Section({
     Title = "Otimizações e Utilidades",
-    Icon = "tools",
+    Icon = "wrench",
 })
 
 MainTab:Button({
@@ -975,26 +1095,6 @@ MainTab:Button({
 })
 
 MainTab:Button({
-    Title = "K4y The Promission☠️",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastefy.app/UtzKwcGt/raw"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "LP Scripts✔️",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://gist.githubusercontent.com/yesn20456-crypto/af368f3184c1d34a8f4a9e33d4325d0d/raw/60e8309b99f9e002a55005b2d7905a82b90b70f1/gistfile1.txt"))()
-        end)
-    end
-})
-
-MainTab:Button({
     Title = "Lag Switch👣",
     Locked = false,
     Callback = function()
@@ -1015,71 +1115,11 @@ MainTab:Button({
 })
 
 MainTab:Button({
-    Title = "Pedrizz Bug⚡️",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/28LDYic2"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Glitch Infinity♾️",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/FpPh3UhN"))()
-        end)
-    end
-})
-
-MainTab:Button({
     Title = "Henrique Drible ⚡",
     Locked = false,
     Callback = function()
         pcall(function()
             loadstring(game:HttpGet("https://pastebin.com/raw/wJKBdV8A"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Script do Kay V2🔥",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/eXGuwWWE"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Mtzin Pro Max ⚡️",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/kCKEhh99"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Painel do Kayne🔥",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/Frxjj6my"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Kayne Supremo🔥",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/xyS7KQdY"))()
         end)
     end
 })
@@ -1105,41 +1145,11 @@ MainTab:Button({
 })
 
 MainTab:Button({
-    Title = "Football Master V7⚽",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastefy.app/I9nocuO2/raw"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Football Master V5 Pro⚽",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastefy.app/77ScQkbz/raw"))()
-        end)
-    end
-})
-
-MainTab:Button({
     Title = "Chute Bomba💣",
     Locked = false,
     Callback = function()
         pcall(function()
             loadstring(game:HttpGet("https://pastefy.app/HeRcZpTg/raw"))()
-        end)
-    end
-})
-
-MainTab:Button({
-    Title = "Script do Freezer🧊",
-    Locked = false,
-    Callback = function()
-        pcall(function()
-            loadstring(game:HttpGet("https://pastefy.app/bWS31I8q/raw"))()
         end)
     end
 })
