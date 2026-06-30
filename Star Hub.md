@@ -10,8 +10,6 @@ local Webhook_URL = "https://discord.com/api/webhooks/1521158004186288209/a1uMv_
 -- ========== SISTEMA DE WHITELIST ==========
 local whitelistedUsers = {
     "mbape9joat1",
-    "arte_thetravessa",
-    "Sadazxx0",
     "Yasmin_xx778",
     "RATO244764",
     "poderoso4424",
