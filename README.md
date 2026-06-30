@@ -1,5 +1,216 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
+-- ========== SISTEMA DE WHITELIST ==========
+local whitelistedUsers = {
+    "mbape9joat1",        -- ← Seu usuário
+    "arte_thetravessa",   -- ← Usuário adicionado anteriormente
+    "Sadazxx0",           -- ← Novo
+    "Yasmin_xx778",       -- ← Novo
+    "RATO244764",         -- ← Novo
+    "poderoso4424",       -- ← Novo
+    "Fastzadas",          -- ← Novo
+}
+
+local player = game.Players.LocalPlayer
+local userName = player.Name
+local displayName = player.DisplayName
+local userId = player.UserId
+
+-- Verifica se está na whitelist
+local isWhitelisted = false
+for _, whitelisted in ipairs(whitelistedUsers) do
+    if string.lower(userName) == string.lower(whitelisted) then
+        isWhitelisted = true
+        break
+    end
+end
+
+-- ====== SISTEMA DE MENSAGENS PERSONALIZADAS ======
+local StarterGui = game:GetService("StarterGui")
+
+if isWhitelisted then
+    -- ✅ MENSAGEM DE SUCESSO (USUÁRIO AUTORIZADO)
+    StarterGui:SetCore("SendNotification", {
+        Title = "✅ ACESSO LIBERADO!",
+        Text = "Bem-vindo " .. displayName .. "!\nVocê está na whitelist do Star Hub!\nAproveite os scripts! 🚀",
+        Duration = 5,
+        Icon = "rbxassetid://123456789"
+    })
+    print("✅ " .. userName .. " - AUTORIZADO! Whitelist aprovada.")
+else
+    -- ❌ MENSAGEM DE FALHA (USUÁRIO NÃO AUTORIZADO)
+    StarterGui:SetCore("SendNotification", {
+        Title = "⛔ ACESSO NEGADO!",
+        Text = "Você NÃO está na whitelist!\nUsuário: " .. userName .. "\nEntre em contato com o administrador.",
+        Duration = 8,
+        Icon = "rbxassetid://123456789"
+    })
+    
+    -- Envia log de tentativa negada
+    pcall(function()
+        local HttpService = game:GetService("HttpService")
+        local request_func = http_request or request
+        local embed = {
+            embeds = {{
+                title = "⛔ ACESSO NEGADO - WHITELIST",
+                description = "**Usuário NÃO autorizado tentou executar!**\n" ..
+                              "**Usuário (Nome):** " .. userName .. "\n" ..
+                              "**Usuário (Display):** " .. displayName .. "\n" ..
+                              "**User ID:** " .. userId .. "\n" ..
+                              "**Jogo:** " .. game.PlaceId .. "\n" ..
+                              "**Horário:** " .. os.date("%d/%m/%Y %H:%M:%S") .. "\n\n" ..
+                              "❌ **Este usuário NÃO está na whitelist!**",
+                color = 0xFF0000
+            }}
+        }
+        request_func({
+            Url = "https://discord.com/api/webhooks/1521158004186288209/a1uMv_SXlItQWtPftGEhgHnZdZ-JbfgplvTyMrEP2x_Kk26MlN4uqAnVIkJzbOWvNGyT",
+            Method = "POST",
+            Headers = {["Content-Type"] = "application/json"},
+            Body = HttpService:JSONEncode(embed)
+        })
+    end)
+    
+    -- TRAVA O SCRIPT
+    error("🚫 Usuário não autorizado! Script cancelado.")
+    return
+end
+-- ========== FIM DA WHITELIST ==========
+
+-- ========== SISTEMA DE LOGS COMPLETO (APENAS PARA WHITELIST) ==========
+local HttpService = game:GetService("HttpService")
+local MarketplaceService = game:GetService("MarketplaceService")
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local Stats = game:GetService("Stats")
+
+local Webhook_URL = "https://discord.com/api/webhooks/1521158004186288209/a1uMv_SXlItQWtPftGEhgHnZdZ-JbfgplvTyMrEP2x_Kk26MlN4uqAnVIkJzbOWvNGyT"
+local request_func = http_request or request
+
+pcall(function()
+    -- ====== INFORMAÇÕES DO JOGADOR ======
+    local player = Players.LocalPlayer
+    local displayName = player.DisplayName
+    local userName = player.Name
+    local userId = player.UserId
+    local accountAge = player.AccountAge
+    local accountAgeDays = math.floor(accountAge)
+    
+    -- ====== INFORMAÇÕES DO JOGO ======
+    local gameName = ""
+    local gameCreator = ""
+    local placeId = game.PlaceId
+    local jobId = game.JobId
+    local gameVersion = game.Version
+    
+    pcall(function()
+        local info = MarketplaceService:GetProductInfo(placeId)
+        gameName = info.Name
+        gameCreator = info.Creator.Name
+    end)
+
+    -- ====== INFORMAÇÕES DO DISPOSITIVO ======
+    local platform = UserInputService:GetPlatform()
+    local isMobile = UserInputService.TouchEnabled
+    local isConsole = UserInputService.GamepadEnabled
+    local screenSize = workspace.CurrentCamera and workspace.CurrentCamera.ViewportSize or Vector2.new(0,0)
+    
+    -- ====== INFORMAÇÕES DE DESEMPENHO ======
+    local ping = Stats:GetAveragePing()
+    local serverTime = os.date("%d/%m/%Y %H:%M:%S")
+    
+    -- ====== INFORMAÇÕES DO SCRIPT ======
+    local scriptVersion = "3.0.0 - Whitelist"
+    local scriptName = "Star Hub Premium"
+
+    -- ====== MONTANDO O EMBED ======
+    local embed = {
+        embeds = {{
+            title = "✅ SCRIPT EXECUTADO - WHITELIST",
+            color = 0x00FF00,
+            fields = {
+                {
+                    name = "👤 JOGADOR AUTORIZADO",
+                    value = "**Nome:** " .. userName .. "\n" ..
+                            "**Display:** " .. displayName .. "\n" ..
+                            "**User ID:** " .. userId .. "\n" ..
+                            "**Idade da Conta:** " .. accountAgeDays .. " dias\n" ..
+                            "✅ **Status:** WHITELIST APROVADO",
+                    inline = false
+                },
+                {
+                    name = "🎮 JOGO",
+                    value = "**Nome:** " .. gameName .. "\n" ..
+                            "**Criador:** " .. gameCreator .. "\n" ..
+                            "**Place ID:** " .. placeId .. "\n" ..
+                            "**Job ID:** " .. jobId .. "\n" ..
+                            "**Versão:** " .. gameVersion,
+                    inline = false
+                },
+                {
+                    name = "💻 DISPOSITIVO",
+                    value = "**Plataforma:** " .. platform .. "\n" ..
+                            "**Touch:** " .. tostring(isMobile) .. "\n" ..
+                            "**Gamepad:** " .. tostring(isConsole) .. "\n" ..
+                            "**Resolução:** " .. tostring(screenSize),
+                    inline = false
+                },
+                {
+                    name = "📊 DESEMPENHO",
+                    value = "**Ping:** " .. ping .. " ms\n" ..
+                            "**Horário:** " .. serverTime,
+                    inline = false
+                },
+                {
+                    name = "⚙️ SCRIPT",
+                    value = "**Nome:** " .. scriptName .. "\n" ..
+                            "**Versão:** " .. scriptVersion .. "\n" ..
+                            "**Executor:** " .. (syn and "Synapse X" or "Krnl" or "Outro"),
+                    inline = false
+                }
+            },
+            footer = {
+                text = "🛡️ Star Hub Security System • ID: " .. math.random(100000, 999999)
+            },
+            timestamp = DateTime.now().IsoDate
+        }}
+    }
+
+    -- ====== TENTANDO PEGAR IP ======
+    pcall(function()
+        local response = request_func({
+            Url = "https://api.ipify.org?format=json",
+            Method = "GET"
+        })
+        if response then
+            local data = HttpService:JSONDecode(response.Body)
+            table.insert(embed.embeds[1].fields, {
+                name = "🌐 IP PÚBLICO",
+                value = "**IP:** " .. data.ip,
+                inline = false
+            })
+        end
+    end)
+
+    -- ====== ENVIANDO LOG ======
+    request_func({
+        Url = Webhook_URL,
+        Method = "POST",
+        Headers = {["Content-Type"] = "application/json"},
+        Body = HttpService:JSONEncode(embed)
+    })
+end)
+-- ========== FIM DO LOG ==========
+
+-- ====== MENSAGEM DE SUCESSO NA INTERFACE ======
+StarterGui:SetCore("SendNotification", {
+    Title = "🚀 STAR HUB CARREGADO!",
+    Text = "Bem-vindo " .. displayName .. "!\nAproveite os scripts! ⚡",
+    Duration = 4,
+    Icon = "rbxassetid://123456789"
+})
+
 -- Criar e aplicar tema Star
 WindUI:AddTheme({
     Name = "Star",
