@@ -2,13 +2,13 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 
 -- ========== SISTEMA DE WHITELIST ==========
 local whitelistedUsers = {
-    "mbape9joat1",        -- ← Seu usuário
-    "arte_thetravessa",   -- ← Usuário adicionado anteriormente
-    "Sadazxx0",           -- ← Novo
-    "Yasmin_xx778",       -- ← Novo
-    "RATO244764",         -- ← Novo
-    "poderoso4424",       -- ← Novo
-    "Fastzadas",          -- ← Novo
+    "mbape9joat1",
+    "arte_thetravessa",
+    "Sadazxx0",
+    "Yasmin_xx778",
+    "RATO244764",
+    "poderoso4424",
+    "Fastzadas",
 }
 
 local player = game.Players.LocalPlayer
@@ -173,7 +173,7 @@ pcall(function()
             footer = {
                 text = "🛡️ Star Hub Security System • ID: " .. math.random(100000, 999999)
             },
-            timestamp = DateTime.now().IsoDate
+            timestamp = os.date("!%Y-%m-%dT%TZ")  -- ← CORRIGIDO!
         }}
     }
 
