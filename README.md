@@ -20,17 +20,25 @@ local displayName = player.DisplayName
 local userId = player.UserId
 
 local HttpService = game:GetService("HttpService")
+
+-- ====== MESMA FUNÇÃO DO TESTE MANUAL ======
 local request_func = syn and syn.request or http_request or request
 
--- Função para enviar webhook
+-- Função para enviar webhook (IGUAL AO TESTE)
 local function SendWebhook(embed)
     pcall(function()
-        request_func({
+        local response = request_func({
             Url = Webhook_URL,
             Method = "POST",
             Headers = {["Content-Type"] = "application/json"},
             Body = HttpService:JSONEncode(embed)
         })
+        
+        if response and response.StatusCode == 204 then
+            print("✅ Webhook enviado com sucesso!")
+        else
+            print("❌ Falha ao enviar webhook. Status: " .. tostring(response and response.StatusCode or "Desconhecido"))
+        end
     end)
 end
 
@@ -55,7 +63,7 @@ if isWhitelisted then
     })
     print("✅ " .. userName .. " - AUTORIZADO!")
     
-    -- ====== ENVIA MENSAGEM DE SUCESSO ======
+    -- ====== ENVIA MENSAGEM DE SUCESSO (IGUAL AO TESTE) ======
     local embed = {
         embeds = {{
             title = "✅ SUCESSO - WHITELIST",
@@ -72,7 +80,6 @@ if isWhitelisted then
         }}
     }
     SendWebhook(embed)
-    print("📤 Mensagem de SUCESSO enviada ao Discord!")
 
 -- ========== SE NÃO FOR AUTORIZADO ==========
 else
@@ -84,7 +91,7 @@ else
     })
     print("❌ " .. userName .. " - BLOQUEADO!")
     
-    -- ====== ENVIA MENSAGEM DE FALHA ======
+    -- ====== ENVIA MENSAGEM DE FALHA (IGUAL AO TESTE) ======
     local embed = {
         embeds = {{
             title = "❌ FALHA - WHITELIST",
@@ -102,7 +109,6 @@ else
         }}
     }
     SendWebhook(embed)
-    print("📤 Mensagem de FALHA enviada ao Discord!")
     
     error("🚫 Bloqueado!")
     return
