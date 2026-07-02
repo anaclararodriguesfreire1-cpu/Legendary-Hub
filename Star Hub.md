@@ -319,6 +319,26 @@ MainTab:Button({
     end
 })
 
+MainTab:Button({
+    Title = "Atravessar Lendário ✡️",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/zh9P9AqV"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Atravessar 🟪",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/KdhVVlaC"))()
+        end)
+    end
+})
+
 -- =====================================================
 -- SEÇÃO 3: ANTI PULO
 -- =====================================================
@@ -1069,6 +1089,27 @@ MainTab:Button({
     Callback = function()
         pcall(function()
             loadstring(game:HttpGet("https://pastefy.app/bWS31I8q/raw"))()
+        end)
+    end
+})
+
+MainTab:Button({
+    Title = "Piu V5 ㊗️",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/VCmcBaUa"))()
+        end)
+    end
+})
+
+-- ⭐ NOVO BOTÃO ADICIONADO AQUI ⭐
+MainTab:Button({
+    Title = "Royal Shadow ☂️",
+    Locked = false,
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/Y6yKS7DD"))()
         end)
     end
 })
