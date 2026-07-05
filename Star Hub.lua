@@ -1,9 +1,18 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
--- ========== WEBHOOK SIMPLES (IGUAL AO QUE FUNCIONA) ==========
+-- ========== VERIFICAÇÃO DO WINDUI ==========
+if not WindUI then
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "❌ ERRO",
+        Text = "Falha ao carregar WindUI!",
+        Duration = 5,
+    })
+    return
+end
+
+-- ========== WEBHOOK ==========
 local HttpService = game:GetService("HttpService")
 local request_func = http_request or request
-local MarketplaceService = game:GetService("MarketplaceService")
 
 local Webhook_URL = "https://discord.com/api/webhooks/1521158004186288209/a1uMv_SXlItQWtPftGEhgHnZdZ-JbfgplvTyMrEP2x_Kk26MlN4uqAnVIkJzbOWvNGyT"
 
@@ -26,8 +35,9 @@ local player = game.Players.LocalPlayer
 local userName = player.Name
 local displayName = player.DisplayName
 local userId = player.UserId
+local StarterGui = game:GetService("StarterGui")
 
--- Verifica se está na whitelist
+-- Verifica whitelist
 local isWhitelisted = false
 for _, whitelisted in ipairs(whitelistedUsers) do
     if string.lower(userName) == string.lower(whitelisted) then
@@ -37,40 +47,37 @@ for _, whitelisted in ipairs(whitelistedUsers) do
 end
 
 -- ====== SISTEMA DE MENSAGENS ======
-local StarterGui = game:GetService("StarterGui")
-
 if isWhitelisted then
-    -- ✅ MENSAGEM DE SUCESSO (USUÁRIO AUTORIZADO)
+    -- ✅ SUCESSO
     StarterGui:SetCore("SendNotification", {
         Title = "✅ ACESSO LIBERADO!",
         Text = "Bem-vindo " .. displayName .. "!\nVocê está na whitelist do Star Hub!\nAproveite os scripts! 🚀",
         Duration = 5,
     })
-    print("✅ " .. userName .. " - AUTORIZADO! Whitelist aprovada.")
+    print("✅ " .. userName .. " - AUTORIZADO!")
     
-    -- ====== ENVIA WEBHOOK DE SUCESSO ======
-    local embedSucesso = {
-        embeds = {{
-            title = "✅ USUÁRIO AUTORIZADO!",
-            description = "**" .. displayName .. "** executou o script com sucesso!\n\n" ..
-                          "**Usuário:** " .. userName .. "\n" ..
-                          "**User ID:** " .. userId .. "\n" ..
-                          "**PlaceId:** " .. game.PlaceId,
-            color = 0x00FF00
-        }}
-    }
+    -- ENVIA WEBHOOK
     pcall(function()
+        local embedSucesso = {
+            embeds = {{
+                title = "✅ USUÁRIO AUTORIZADO!",
+                description = "**" .. displayName .. "** executou o script com sucesso!\n\n" ..
+                              "**Usuário:** " .. userName .. "\n" ..
+                              "**User ID:** " .. userId .. "\n" ..
+                              "**PlaceId:** " .. game.PlaceId,
+                color = 0x00FF00
+            }}
+        }
         request_func({
             Url = Webhook_URL,
             Method = "POST",
             Headers = {["Content-Type"] = "application/json"},
             Body = HttpService:JSONEncode(embedSucesso)
         })
-        print("📤 Webhook de SUCESSO enviado!")
     end)
     
 else
-    -- ❌ MENSAGEM DE FALHA (USUÁRIO NÃO AUTORIZADO)
+    -- ❌ FALHA
     StarterGui:SetCore("SendNotification", {
         Title = "⛔ ACESSO NEGADO!",
         Text = "❌ Você NÃO está na whitelist!\n\nUsuário: " .. userName .. "\n\nEntre em contato com o administrador.",
@@ -78,41 +85,39 @@ else
     })
     print("❌ " .. userName .. " - BLOQUEADO!")
     
-    -- ====== ENVIA WEBHOOK DE FALHA ======
-    local embedFalha = {
-        embeds = {{
-            title = "⛔ ACESSO NEGADO - WHITELIST",
-            description = "**" .. displayName .. "** tentou executar mas foi BLOQUEADO!\n\n" ..
-                          "**Usuário:** " .. userName .. "\n" ..
-                          "**User ID:** " .. userId .. "\n" ..
-                          "**PlaceId:** " .. game.PlaceId .. "\n\n" ..
-                          "❌ **Este usuário NÃO está na whitelist!**",
-            color = 0xFF0000
-        }}
-    }
+    -- ENVIA WEBHOOK DE FALHA
     pcall(function()
+        local embedFalha = {
+            embeds = {{
+                title = "⛔ ACESSO NEGADO - WHITELIST",
+                description = "**" .. displayName .. "** tentou executar mas foi BLOQUEADO!\n\n" ..
+                              "**Usuário:** " .. userName .. "\n" ..
+                              "**User ID:** " .. userId .. "\n" ..
+                              "**PlaceId:** " .. game.PlaceId .. "\n\n" ..
+                              "❌ **Este usuário NÃO está na whitelist!**",
+                color = 0xFF0000
+            }}
+        }
         request_func({
             Url = Webhook_URL,
             Method = "POST",
             Headers = {["Content-Type"] = "application/json"},
             Body = HttpService:JSONEncode(embedFalha)
         })
-        print("📤 Webhook de FALHA enviado!")
     end)
     
-    -- TRAVA O SCRIPT
     error("🚫 Usuário não autorizado! Script cancelado.")
     return
 end
--- ========== FIM DA WHITELIST ==========
 
--- ====== MENSAGEM DE SUCESSO NA INTERFACE ======
+-- ====== MENSAGEM DE SUCESSO ======
 StarterGui:SetCore("SendNotification", {
     Title = "🚀 STAR HUB CARREGADO!",
     Text = "Bem-vindo " .. displayName .. "!\nAproveite os scripts! ⚡",
     Duration = 4,
 })
 
+-- ====== CRIAÇÃO DA INTERFACE ======
 -- Criar e aplicar tema Star
 WindUI:AddTheme({
     Name = "Star",
@@ -125,6 +130,7 @@ WindUI:AddTheme({
     Icon = Color3.fromHex("#FFD700"),
 })
 
+-- Criar a janela principal
 local MainWindow = WindUI:CreateWindow({
     Title = "Star Hub",
     Icon = "star",
@@ -140,35 +146,43 @@ local MainWindow = WindUI:CreateWindow({
     BackgroundImageTransparency = 0.42,
     HideSearchBar = true,
     ScrollBarEnabled = false,
-    User = {
+})
+
+-- Verificar se a janela foi criada
+if not MainWindow then
+    StarterGui:SetCore("SendNotification", {
+        Title = "❌ ERRO",
+        Text = "Falha ao criar a interface!",
+        Duration = 5,
+    })
+    return
+end
+
+-- Adicionar tags e configurações (com pcall para segurança)
+pcall(function()
+    MainWindow:Tag({
+        Title = "V1",
+        Icon = "",
+        Color = Color3.fromHex("#FFD700"),
+        Radius = 13,
+    })
+end)
+
+pcall(function()
+    MainWindow:EditOpenButton({
+        Title = "Anti Pulo",
+        Icon = "shield-ban",
+        CornerRadius = UDim.new(0,8),
+        StrokeThickness = 3,
+        Color = ColorSequence.new(
+            Color3.fromHex("#FFD700"),
+            Color3.fromHex("#DAA520")
+        ),
+        OnlyMobile = true,
         Enabled = true,
-        Anonymous = false,
-        Callback = function()
-            print("clicado")
-        end,
-    },
-})
-
-MainWindow:Tag({
-    Title = "V1",
-    Icon = "",
-    Color = Color3.fromHex("#FFD700"),
-    Radius = 13,
-})
-
-MainWindow:EditOpenButton({
-    Title = "Anti Pulo",
-    Icon = "shield-ban",
-    CornerRadius = UDim.new(0,8),
-    StrokeThickness = 3,
-    Color = ColorSequence.new(
-        Color3.fromHex("#FFD700"),
-        Color3.fromHex("#DAA520")
-    ),
-    OnlyMobile = true,
-    Enabled = true,
-    Draggable = true,
-})
+        Draggable = true,
+    })
+end)
 
 -- ================= TAB PRINCIPAL =================
 local MainTab = MainWindow:Tab({
@@ -390,7 +404,7 @@ MainTab:Button({
             loadstring(game:HttpGet("https://pastefy.app/d0yvvV78/raw"))()
         end)
     end
-})
+)
 
 -- =====================================================
 -- SEÇÃO 4: REACH
@@ -458,7 +472,7 @@ MainTab:Button({
             loadstring(game:HttpGet("https://pastebin.com/raw/hfrDcUm8"))()
         end)
     end
-})
+)
 
 -- =====================================================
 -- SEÇÃO 5: BOLA
@@ -516,7 +530,7 @@ MainTab:Button({
             loadstring(game:HttpGet("https://pastefy.app/59dDHHfr/raw"))()
         end)
     end
-})
+)
 
 -- =====================================================
 -- SEÇÃO 6: HUBS E PAINEIS
@@ -1334,7 +1348,7 @@ MainTab:Button({
             loadstring(game:HttpGet("https://pastefy.app/SNttOINq/raw"))()
         end)
     end
-})
+)
 
 -- ================= TAB SCRIPTS ALTERNATIVOS =================
 local SATab = MainWindow:Tab({
@@ -1457,12 +1471,17 @@ ConfigTab:Slider({
     end
 })
 
+-- Botão para destruir a interface (CORRIGIDO)
 ConfigTab:Button({
     Title = "Destruir Interface🔨",
     Locked = false,
     Callback = function()
-        MainWindow:Destroy()
+        pcall(function()
+            if MainWindow then
+                MainWindow:Destroy()
+            end
+        end)
     end
 })
 
-print("✅ Star Hub Carregado!")
+print("✅ Star Hub Carregado com sucesso!")
