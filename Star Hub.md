@@ -3,6 +3,7 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 -- ========== WEBHOOK SIMPLES (IGUAL AO QUE FUNCIONA) ==========
 local HttpService = game:GetService("HttpService")
 local request_func = http_request or request
+local MarketplaceService = game:GetService("MarketplaceService")
 
 local Webhook_URL = "https://discord.com/api/webhooks/1521158004186288209/a1uMv_SXlItQWtPftGEhgHnZdZ-JbfgplvTyMrEP2x_Kk26MlN4uqAnVIkJzbOWvNGyT"
 
