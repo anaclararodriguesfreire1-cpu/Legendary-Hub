@@ -29,6 +29,7 @@ local whitelistedUsers = {
     "pequenolittlebk3",
     "arte_thetravessa",
     "Torresgot9",
+    "Tobias_12376",
     "Aliban_32",
     "RD585585", -- ✅ ADICIONADO
 }
