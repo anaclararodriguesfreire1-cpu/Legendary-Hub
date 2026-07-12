@@ -31,7 +31,8 @@ local whitelistedUsers = {
     "Torresgot9",
     "Tobias_12376",
     "Aliban_32",
-    "RD585585", -- ✅ ADICIONADO
+    "RD585585",
+    "Miguel_Jr927",
 }
 
 local player = game.Players.LocalPlayer
